@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model files (if large)
+*.h5
+*.keras
+*.pt
+
+# Dataset
+dataset/
+data/
+
+# OS
+.DS_Store
+Thumbs.db
+
+
+# Images (optional)
+*.jpg
+*.jpeg
+*.png
+
+# Reports
+PPT on AI-Enables Waste Classification System.pptx
+Report on AI Enabled Waste Segregation System.pdf

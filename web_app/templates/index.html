@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoSort | Smart Waste Classifier</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_old.css') }}">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+
+
+<body>
+
+
+
+    <div class="background-circles">
+
+        <div class="circle c1"></div>
+
+        <div class="circle c2"></div>
+
+    </div>
+
+
+
+    <div class="glass-card">
+
+        <header>
+
+            <div class="logo-icon"><i class="fas fa-leaf"></i></div>
+
+            <h1>EcoSort AI</h1>
+
+            <p>Intelligent Waste Segregation</p>
+
+        </header>
+
+
+
+        <div class="preview-container" id="previewContainer">
+
+            <div id="placeholder-text">
+
+                <i class="fas fa-image fa-2x"></i>
+
+                <p>No image selected</p>
+
+            </div>
+
+            <img id="imagePreview" hidden>
+
+            <video id="videoElement" autoplay playsinline hidden></video>
+
+            <canvas id="canvas" hidden></canvas>
+
+
+
+            <div class="scan-line"></div>
+
+        </div>
+
+
+
+        <div class="controls">
+
+            <div class="button-group">
+
+                <label class="btn btn-outline">
+
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+
+                    <i class="fas fa-upload"></i> Upload
+
+                </label>
+
+                <button class="btn btn-outline" id="cameraBtn" onclick="toggleCamera()">
+
+                    <i class="fas fa-camera"></i> Camera
+
+                </button>
+
+            </div>
+
+
+
+            <button class="btn btn-primary" onclick="classifyWaste()">
+
+                <i class="fas fa-search"></i> Analyze Waste
+
+            </button>
+
+            <button class="btn btn-outline" onclick="location.reload()">🔄 Scan Another</button>
+
+
+
+        </div>
+
+
+
+        <div id="resultCard" class="result-card" hidden>
+
+            <div class="loader" id="loader" hidden></div>
+
+            <div id="resultContent">
+
+                <h2 id="wasteType"></h2>
+
+                <div class="confidence-wrapper">
+
+                    <span>AI Confidence</span>
+
+                    <span id="confValue">0%</span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div id="progressFill"></div>
+
+                </div>
+
+                <p id="disposalHint" class="hint"></p>
+
+            </div>
+            <button class="btn btn-primary" id="segregateBtn" hidden onclick="startSegregation()">
+                🤖 Segregate Waste
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+
+</body>
+
+
+
+</html>

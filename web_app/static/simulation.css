@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #1e1e1e 0%, #111 50%, #000 100%);
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    margin-top: 60px;
+}
+
+.bin {
+    width: 240px;
+    height: 360px;
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    overflow-y: auto;
+    max-height: 320px;
+    scrollbar-width: thin;
+}
+
+.bin::-webkit-scrollbar {
+    width: 6px;
+}
+
+.bin::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.dry-bin {
+    border: 3px solid #00ffc8;
+}
+
+.wet-bin {
+    border: 3px solid #ffd700;
+}
+
+.reset-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #00ff88;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: #00cc6a;
+    transform: scale(1.05);
+}
+
+
+.bin ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bin li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 6px 0;
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.robot-section {
+    position: relative;
+    width: 200px;
+    height: 250px;
+}
+
+.arm-base {
+    width: 80px;
+    height: 20px;
+    background: #444;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.robot-arm {
+    width: 6px;
+    height: 120px;
+    background: #aaa;
+    margin: 0 auto;
+    transform-origin: top center;
+    transition: transform 0.7s ease;
+    position: relative;
+}
+
+.arm-joint {
+    width: 20px;
+    height: 20px;
+    background: #666;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -7px;
+}
+
+.arm-extension {
+    width: 6px;
+    height: 80px;
+    background: #ccc;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+}
+
+.gripper {
+    width: 20px;
+    height: 20px;
+    background: #888;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100px;
+    left: -7px;
+    transition: background 0.3s ease;
+}
+
+.gripper.active {
+    background: red;
+    box-shadow: 0 0 15px red;
+}
+
+.progress-container {
+    width: 60%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 40px auto;
+    border-radius: 10px;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: #00ff88;
+    transition: width 0.5s ease;
+    border-radius: 10px;
+}
+
+.queue-section {
+    margin-top: 40px;
+}
+
+.queue-container {
+    width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+.queue-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.queue-container li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    margin: 6px 0;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.queue-container li:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.coord {
+    color: #ccc;
+}
+
+.type {
+    font-weight: bold;
+}
+
+.type.dry {
+    color: #00ffc8;
+}
+
+.type.wet {
+    color: #ffd700;
+}
+
+.completion {
+    margin-top: 30px;
+    color: #00ff88;
+    font-size: 22px;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #00ff88;
+    }
+
+    to {
+        text-shadow: 0 0 20px #00ff88;
+    }
+}
