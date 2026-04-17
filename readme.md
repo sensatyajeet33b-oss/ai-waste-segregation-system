@@ -180,7 +180,10 @@ Upload an image and view:
 ## 👨‍💻 Contributors
 
 * Satyajeet
-* Team Members
+* Ankit
+* Kaustav
+* Suryansh
+* Aabir
 
 ---
 
