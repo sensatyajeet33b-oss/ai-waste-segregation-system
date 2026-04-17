@@ -35,3 +35,21 @@ Copy code
 - Real IoT hardware integration
 - Bin capacity monitoring
 
+
+# AI-Enabled Waste Segregation System
+
+## Features
+- Level 1: Image Classification
+- Level 2: Object Detection (YOLO)
+- Web Interface for interaction
+
+## Tech Stack
+- Python
+- TensorFlow / PyTorch
+- Flask
+- YOLO
+
+## How to Run
+1. Clone repo
+2. Install dependencies
+3. Run app.py
